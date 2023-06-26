@@ -1,0 +1,96 @@
+/* CSS Styles */
+body {
+    background-color: black;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: linear-gradient(to right, blue, indigo, violet);
+    border: 2px solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+    border-image-slice: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.5);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 128, 0, 0.8);
+  }
+  
+  .timer {
+    font-size: 48px;
+    font-weight: bold;
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 7px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .controls button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  @keyframes button-click-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .controls button.clicked {
+    animation: button-click-animation 0.5s;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    /* Responsive Styles for screens up to 600px width */
+    .timer {
+      font-size: 36px;
+    }
+    
+    .controls button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+  
